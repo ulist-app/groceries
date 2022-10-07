@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 import react from "@vitejs/plugin-react";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
@@ -10,7 +11,7 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  plugins: [react()],
+  plugins: [react(), VitePWA({ registerType: "autoUpdate" })],
   // https://medium.com/@ftaioli/using-node-js-builtin-modules-with-vite-6194737c2cd2
   resolve: {
     alias: {
