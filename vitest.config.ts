@@ -6,5 +6,14 @@ export default defineConfig({
     globals: true,
     includeSource: ["src/**/*.{ts,tsx}"],
     setupFiles: "src/test.setup.ts",
+    coverage: {
+      include: ["src/**/*.{ts,tsx}"],
+      exclude: [
+        "src/tests/**",
+        "src/infrastructure/data/**",
+        "src/main.tsx",
+        "<rootDir>/node_modules/",
+      ],
+    },
   },
 });
