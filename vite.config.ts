@@ -67,6 +67,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "build",
     rollupOptions: {
       plugins: [
         // Enable rollup polyfills plugin
