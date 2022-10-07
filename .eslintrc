@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "testing-library/await-async-query": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 130,
+        "tabWidth": 2
+      }
+    ]
+  }
+}

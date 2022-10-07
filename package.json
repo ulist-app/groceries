@@ -12,7 +12,8 @@
     "deploy": "gh-pages -d build",
     "test": "vitest run src",
     "test:coverage": "npm run test -- --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "linter:fix": "eslint --fix src"
   },
   "dependencies": {
     "classnames": "2.3.2",
@@ -42,6 +43,7 @@
     "@vitest/coverage-c8": "0.24.0",
     "@vitest/ui": "0.24.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-config-react-app": "7.0.1",
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-prettier": "4.2.1",
     "gh-pages": "4.0.0",
