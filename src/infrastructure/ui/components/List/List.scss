@@ -1,0 +1,28 @@
+.List {
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 16px);
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    padding: 8px;
+    width: calc(100% - 16px);
+  }
+
+  li {
+    list-style: none;
+  }
+
+  summary {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}

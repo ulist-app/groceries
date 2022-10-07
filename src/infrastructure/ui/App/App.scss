@@ -1,0 +1,41 @@
+.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  grid-template-areas:
+    ". . .";
+  align-items: center;
+  justify-items: center;
+  font-size: 1rem;
+  color: white;
+  width: 100%;
+
+  span {
+    display: block;
+  }
+}
+
+.App-main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 640px;
+  padding-bottom: 144px;
+  width: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}

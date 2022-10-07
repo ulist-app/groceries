@@ -1,0 +1,26 @@
+.Search {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  input {
+    background-color: #d2d2d2;
+    border: none;
+    border-radius: 32px 0 0 32px;
+    font-size: 2rem;
+    height: calc(80px - 32px);
+    outline: none;
+    padding: 16px;
+    text-align: center;
+    width: 80%;
+  }
+
+  button {
+    background-color: #d2d2d2;
+    border: none;
+    border-radius: 0 32px 32px 0;
+    height: calc(80px);
+    padding-right: 16px;
+    width: 20%;
+  }
+}
