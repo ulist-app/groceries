@@ -36,22 +36,11 @@ function generateOnSubmitHandler(
   actions: StoreActions
 ): FormEventHandler<HTMLFormElement> {
   return (event) => {
-    try {
-      event.preventDefault();
-      const formElements = event.currentTarget.elements as unknown as {
-        length: number;
-        syncUrl: HTMLInputElement;
-      };
-      if (formElements.length) {
-        const syncUrl = formElements.syncUrl.value;
-        if (syncUrl) {
-          actions.setSettings({
-            syncUrl,
-          });
-        }
-      }
-    } catch (error) {
-      console.debug(error);
-    }
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    actions.setSettings({
+      syncUrl: formData.get("syncUrl")!.toString(),
+    });
   };
 }

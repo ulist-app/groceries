@@ -31,20 +31,4 @@ describe("Settings CRUD view should", () => {
       setSettingsDouble.assertHasBeenCalledWith({ syncUrl: expectedSyncUrl })
     );
   });
-
-  it("not edit database sync url if value is empty", async () => {
-    const setSettingsDouble = new UseCaseDouble();
-    await waitFor(() =>
-      initStore(
-        UseCasesBuilder.init().withSetSettingsCase(setSettingsDouble).build()
-      )
-    );
-    render(<SettingsCRUD />);
-
-    await userEvent.click(
-      screen.getByLabelText(messages.settings.submitButton)
-    );
-
-    await waitFor(() => setSettingsDouble.assertHasBeenCalledTimes(0));
-  });
 });
