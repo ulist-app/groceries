@@ -68,8 +68,8 @@ describe("Item List should", () => {
     ];
 
     expect(ItemList.groupItemsByCategory(items)).toStrictEqual([
-      [categoryA.name, [items.at(1), items.at(2)]],
-      [categoryB.name, [items.at(0)]],
+      [categoryA.title, [items.at(1), items.at(2)]],
+      [categoryB.title, [items.at(0)]],
     ]);
   });
 
