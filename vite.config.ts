@@ -11,7 +11,36 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  plugins: [react(), VitePWA({ registerType: "autoUpdate" })],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      manifest: {
+        name: "Groceries",
+        short_name: "Groceries",
+        theme_color: "#fcb827",
+        background_color: "#963d97",
+        icons: [
+          {
+            src: "pwa-128x128.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            sizes: "128x128",
+            type: "image/png",
+          },
+          {
+            src: "/pwa-512x512.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
+      },
+    }),
+  ],
   // https://medium.com/@ftaioli/using-node-js-builtin-modules-with-vite-6194737c2cd2
   resolve: {
     alias: {

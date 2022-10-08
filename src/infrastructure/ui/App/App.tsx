@@ -21,8 +21,10 @@ function App() {
             color: palette.white,
           }}
         >
-          <span>{!match && <Link to="/">🔙</Link>}</span>
-          <span>🛒 Groceries list 🛒</span>
+          <span>{!match && <Link to="/">⬅️</Link>}</span>
+          <span>
+            <img src="/groceries-128x128.png" alt="Groceries" />
+          </span>
           <span>
             <Link to="/settings">⚙️</Link>
           </span>

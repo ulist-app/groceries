@@ -8,7 +8,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  height: 10vh;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
@@ -17,12 +17,18 @@
     ". . .";
   align-items: center;
   justify-items: center;
-  font-size: 1rem;
   color: white;
   width: 100%;
 
-  span {
+  img {
     display: block;
+    height: 8vh;
+  }
+
+  a, span {
+    display: block;
+    font-size: 6vh;
+    text-decoration: none;
   }
 }
 
