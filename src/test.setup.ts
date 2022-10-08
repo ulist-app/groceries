@@ -13,4 +13,5 @@ window.process.nextTick = (fn) => {
 };
 
 console.log = () => {};
+console.debug = () => {};
 console.error = () => {};

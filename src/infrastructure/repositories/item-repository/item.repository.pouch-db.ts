@@ -67,7 +67,7 @@ export class ItemRepositoryPouchDB implements ItemRepository {
       const category = await this.findCategory(document.category);
       return ItemRepositoryPouchDB.mapItemToDomain(document, category);
     } catch (error) {
-      console.error(`Error saving item: ${error}`);
+      console.error(`Error getting item: ${error}`);
       throw new ItemNotFoundError(id);
     }
   }

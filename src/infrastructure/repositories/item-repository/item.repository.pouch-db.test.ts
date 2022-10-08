@@ -76,6 +76,29 @@ describe("Pouch DB implementation for item repository should", () => {
     expect(item).toStrictEqual(savedItem);
   });
 
+  it("retry to save if there is conflict", async () => {
+    const item = ItemBuilder.random();
+    await helper.createItem(item);
+    let saveHasBeenCalled = false;
+    const itemRepositoryPouchDB = new ItemRepositoryPouchDB({
+      db: {
+        put() {
+          if (!saveHasBeenCalled) {
+            saveHasBeenCalled = true;
+            throw { name: "conflict" };
+          }
+          return { ok: true };
+        },
+      },
+    } as unknown as PouchDatasource);
+    itemRepositoryPouchDB.findById = async () => item;
+    const saveSpy = vi.spyOn(itemRepositoryPouchDB, "save");
+
+    await itemRepositoryPouchDB.save(item);
+
+    expect(saveSpy).toHaveBeenCalledTimes(2);
+  });
+
   it("throw an ItemNotSavedError if item can't be saved", async () => {
     const expectedItem = ItemBuilder.random();
     const itemRepositoryPouchDB = new ItemRepositoryPouchDB({
