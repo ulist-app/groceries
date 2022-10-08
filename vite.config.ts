@@ -18,8 +18,8 @@ export default defineConfig({
       manifest: {
         name: "Groceries",
         short_name: "Groceries",
-        theme_color: "#fcb827",
-        background_color: "#963d97",
+        background_color: "#fcb827",
+        theme_color: "#963d97",
         icons: [
           {
             src: "pwa-128x128.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
