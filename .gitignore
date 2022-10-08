@@ -26,4 +26,5 @@ lerna-debug.log*
 
 # PouchDB directory
 /groceries
+/groceries-test
 /secret.mjs

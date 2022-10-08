@@ -103,7 +103,7 @@ function assertItemsAreEqual(item: Item, expectedItem: Item) {
 
 function createPouchDatasource(): PouchDatasource {
   return PouchDatasource.createPouchDatasource(PouchDb, {
-    dbName: "test",
+    dbName: "groceries-test",
     options: { adapter: "memory" },
   });
 }
