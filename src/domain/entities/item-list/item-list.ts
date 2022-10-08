@@ -26,7 +26,9 @@ export class ItemList {
         }
         return dictionary;
       }, {} as Record<CategoryName, Item[]>)
-    ).sort(([a], [b]) => ItemList.sortAsc(a, b));
+    )
+      .sort(([a], [b]) => ItemList.sortAsc(a, b))
+      .map(([_category, items]) => [items.at(0)!.category.title, items]);
   }
 
   private static sortByName<T extends { name: string }>(a: T, b: T) {

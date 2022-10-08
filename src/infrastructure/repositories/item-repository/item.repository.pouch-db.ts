@@ -45,6 +45,7 @@ export class ItemRepositoryPouchDB implements ItemRepository {
       id: new Id(document.id),
       name: document.name,
       color: document.color,
+      icon: document.icon,
     });
   }
 

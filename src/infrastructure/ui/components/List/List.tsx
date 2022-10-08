@@ -20,9 +20,9 @@ export const List: FC<ListProps> = ({ items }) => {
   }
   return (
     <div className="List">
-      {ItemList.groupItemsByCategory(items).map(([categoryName, items]) => (
-        <details open key={categoryName}>
-          <summary>{categoryName}</summary>
+      {ItemList.groupItemsByCategory(items).map(([categoryTitle, items]) => (
+        <details open key={categoryTitle}>
+          <summary>{categoryTitle}</summary>
           <ul className="ItemList">
             {items.map((item) => (
               <li key={item.id.value}>

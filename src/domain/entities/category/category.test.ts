@@ -9,12 +9,14 @@ describe("Category should", () => {
       const id = new Id();
       const name = "irrelevant-name";
       const color = "tomato";
+      const icon = "⚙️";
 
-      const category = new Category({ id, name, color });
+      const category = new Category({ id, name, color, icon });
 
       expect(category.id).toEqual(id);
       expect(category.name).toBe(name);
       expect(category.color).toBe(color);
+      expect(category.icon).toBe(icon);
     });
     describe("with default", () => {
       const category = new Category();
@@ -27,6 +29,18 @@ describe("Category should", () => {
       it("color as gray", () => {
         expect(category.color).toBe(palette.gray);
       });
+      it("icon as 💩", () => {
+        expect(category.icon).toBe("💩");
+      });
     });
+  });
+
+  it("has title property based on name and icon", () => {
+    const name = "irrelevant-name";
+    const icon = "⚙️";
+
+    const category = new Category({ name, icon });
+
+    expect(category.title).toBe(`${icon} ${name}`);
   });
 });
