@@ -4,6 +4,7 @@ import { palette } from "../../../domain";
 import { initStore } from "../store";
 import { Link, Route, Router, useRoute } from "wouter";
 import { Groceries, ItemCRUD, SettingsCRUD } from "../views";
+import logo from "../../../assets/groceries.png";
 
 function App() {
   const [match] = useRoute("/groceries");
@@ -23,7 +24,7 @@ function App() {
         >
           <span>{!match && <Link to="/">⬅️</Link>}</span>
           <span>
-            <img src="/groceries-128x128.png" alt="Groceries" />
+            <img src={logo} alt="Groceries" />
           </span>
           <span>
             <Link to="/settings">⚙️</Link>
