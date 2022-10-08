@@ -2,7 +2,7 @@
   "name": "groceries",
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ulist-app.github.io/groceries",
+  "homepage": "https://ulist-app.github.io/groceries/",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
