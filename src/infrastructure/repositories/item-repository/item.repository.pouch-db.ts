@@ -81,7 +81,7 @@ export class ItemRepositoryPouchDB implements ItemRepository {
     }
     // @ts-ignore
     const conflicts = documents.rows.filter((doc) => doc._conflicts);
-    console.debug("[CONFLICTS]", conflicts);
+    console.log("[CONFLICTS]", conflicts);
     const { categories, items } = this.groupDocumentsByType(documents);
     const categoryDictionary =
       ItemRepositoryPouchDB.generateCategoryDictionary(categories);
