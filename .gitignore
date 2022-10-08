@@ -7,11 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-build
-dist-ssr
-*.local
+/node_modules
+/build
 
 # testing
 /coverage
@@ -28,5 +25,5 @@ dist-ssr
 *.sw?
 
 # PouchDB directory
-groceries
-secret.mjs
+/groceries
+/secret.mjs
