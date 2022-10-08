@@ -5,6 +5,7 @@ import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfil
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
 import rollupNodePolyFill from "rollup-plugin-node-polyfills";
 
+// Grocery icon created by surang - Flaticon | https://www.flaticon.es/icono-gratis/tienda-de-comestibles_3724788"
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/groceries/",
@@ -22,17 +23,17 @@ export default defineConfig({
         theme_color: "#963d97",
         icons: [
           {
-            src: "pwa-128x128.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            src: "groceries-128x128.png",
             sizes: "128x128",
             type: "image/png",
           },
           {
-            src: "/pwa-512x512.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            src: "/groceries-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
           {
-            src: "pwa-512x512.png", // Grocery icon created by surang - Flaticon | https://www.flaticon.com/free-icons/grocery"
+            src: "groceries-512x512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable",
