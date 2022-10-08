@@ -13,10 +13,12 @@ import {
 import { ItemNotFoundError } from "../../../domain/errors/ItemNotFoundError";
 
 export type PouchDBItem = PouchDBDocument<Item> & {
+  _conflicts?: Array<string>;
   id: string;
   category: string;
 };
 export type PouchDBCategory = PouchDBDocument<Category> & {
+  _conflicts?: Array<string>;
   id: string;
 };
 
@@ -73,10 +75,13 @@ export class ItemRepositoryPouchDB implements ItemRepository {
   async findAll(): Promise<ItemList> {
     const documents = await this.pouch.db.allDocs<
       PouchDBItem | PouchDBCategory
-    >({ include_docs: true });
+    >({ include_docs: true, conflicts: true });
     if (documents.total_rows === 0) {
       return new ItemList([]);
     }
+    // @ts-ignore
+    const conflicts = documents.rows.filter((doc) => doc._conflicts);
+    console.debug("[CONFLICTS]", conflicts);
     const { categories, items } = this.groupDocumentsByType(documents);
     const categoryDictionary =
       ItemRepositoryPouchDB.generateCategoryDictionary(categories);
