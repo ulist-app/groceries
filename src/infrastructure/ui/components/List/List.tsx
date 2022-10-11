@@ -20,6 +20,9 @@ export const List: FC<ListProps> = ({ items }) => {
   }
   return (
     <div className="List">
+      <span className="items-total">
+        {items.length === 1 ? "1 item" : `${items.length} items`}
+      </span>
       {ItemList.groupItemsByCategory(items).map(([categoryTitle, items]) => (
         <details open key={categoryTitle}>
           <summary>{categoryTitle}</summary>
